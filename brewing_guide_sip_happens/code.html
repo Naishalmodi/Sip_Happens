@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brewing Guide | Sip Happens</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @keyframes steam {
+            0% { transform: translateY(0) scaleX(1); opacity: 0; }
+            50% { transform: translateY(-20px) scaleX(1.2); opacity: 0.4; }
+            100% { transform: translateY(-40px) scaleX(1.5); opacity: 0; }
+        }
+        .steam-particle {
+            animation: steam 3s infinite ease-out;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(61, 43, 31, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(222, 193, 175, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-fixed-dim": "#fabc46",
+                "on-primary-container": "#ac9181",
+                "on-secondary-container": "#342800",
+                "background": "#131313",
+                "on-secondary-fixed-variant": "#574500",
+                "primary-fixed-dim": "#dec1af",
+                "on-surface-variant": "#d2c4bc",
+                "on-secondary": "#3c2f00",
+                "on-error": "#690005",
+                "tertiary-fixed": "#ffdeab",
+                "secondary-container": "#af8d11",
+                "on-surface": "#e5e2e1",
+                "surface-dim": "#131313",
+                "on-tertiary-fixed": "#271900",
+                "surface-container": "#20201f",
+                "surface": "#131313",
+                "secondary-fixed-dim": "#e9c349",
+                "on-secondary-fixed": "#241a00",
+                "outline": "#9b8e87",
+                "secondary": "#e9c349",
+                "primary-fixed": "#fbddca",
+                "surface-container-highest": "#353535",
+                "tertiary": "#fabc46",
+                "surface-variant": "#353535",
+                "error-container": "#93000a",
+                "on-tertiary": "#422c00",
+                "surface-tint": "#dec1af",
+                "secondary-fixed": "#ffe088",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary-container": "#c48c15",
+                "on-primary-fixed": "#28180d",
+                "surface-container-high": "#2a2a2a",
+                "tertiary-container": "#402b00",
+                "error": "#ffb4ab",
+                "surface-bright": "#393939",
+                "surface-container-low": "#1c1b1b",
+                "inverse-primary": "#705a4c",
+                "primary-container": "#3d2b1f",
+                "outline-variant": "#4f453f",
+                "on-tertiary-fixed-variant": "#5f4100",
+                "surface-container-lowest": "#0e0e0e",
+                "primary": "#dec1af",
+                "inverse-on-surface": "#313030",
+                "on-primary": "#3f2c20",
+                "on-primary-fixed-variant": "#574335",
+                "on-background": "#e5e2e1",
+                "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-desktop": "64px",
+                "stack-sm": "12px",
+                "margin-mobile": "20px",
+                "stack-md": "24px",
+                "stack-lg": "48px",
+                "unit": "8px",
+                "container-max": "1280px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "headline-md": ["Playfair Display"],
+                "button": ["Montserrat"],
+                "display-lg": ["Playfair Display"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "body-md": ["Montserrat"],
+                "headline-lg": ["Playfair Display"],
+                "body-lg": ["Montserrat"],
+                "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                "button": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/30 selection:text-primary overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-surface/15 backdrop-blur-[20px] border-b border-outline-variant/10 shadow-[0_0_20px_rgba(222,193,175,0.05)] h-20">
+<div class="flex justify-between items-center w-full px-margin-desktop h-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Sip Happens</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 transition-all duration-300" href="#">Brewing Guide</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Order Online</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Our Menu</a>
+<button class="bg-primary text-on-primary font-button text-button px-6 py-3 rounded-lg hover:bg-primary-fixed hover:scale-105 active:scale-95 transition-all duration-300">Order Now</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[614px] min-h-[500px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A moody, high-end cinematic shot of a barista's station in a luxury coffee lounge. Warm golden light catches the steam rising from a fresh pour-over coffee. The background is a sophisticated matte black and deep espresso brown, with artisanal ceramic cups and professional steel machinery visible in soft focus. The atmosphere is serene, hushed, and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtBOay_BRwPjCjrEL8F3dBFM8BoM939gJLkb5hso6j6T4JFTUw607HuZ1yRpTDphBrfSbQa9dLCfh8phFvU4KELQgHcY3E_5X0B6QL31EtmM8_pSflBEkduL0y6gJpp6gSOO_iwEwybB1_TXjx-W-bKsTnZRB1_DagagheXleFQDwUYG0Bo5NCoylfcu333pjiRxW8wR0R0lX8WewNHX7Movn0mMfFdjfU0iGsdD6E0C3ggXEgmLtl5hFteYxc6BHaIOEOvFQq3lY"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/0 via-background/60 to-background"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 block tracking-[0.3em] uppercase">The Ritual of Perfection</span>
+<h1 class="font-display-lg text-display-lg text-primary-fixed mb-6 max-w-3xl mx-auto">Brewing Guide</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Unlock the full potential of your beans with our curated guide to the perfect artisan cup.</p>
+</div>
+</section>
+<!-- Brewing Steps Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+<!-- Timeline Line -->
+<div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary-container to-transparent opacity-30"></div>
+<div class="grid grid-cols-1 gap-24 relative">
+<!-- Step 1: Grind the Beans -->
+<div class="reveal flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+<div class="flex-1 text-right order-2 lg:order-1">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">Step 01</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Grind the Beans</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Choose a medium-fine grind size, similar to sea salt. Freshness is paramount—grind only what you intend to brew immediately to preserve the delicate aromatic oils.</p>
+<div class="flex justify-end gap-3">
+<span class="px-3 py-1 glass-card rounded-full font-label-caps text-[10px] text-tertiary">BURR GRINDER</span>
+<span class="px-3 py-1 glass-card rounded-full font-label-caps text-[10px] text-tertiary">20G BEANS</span>
+</div>
+</div>
+<div class="relative w-full lg:w-[450px] aspect-square order-1 lg:order-2">
+<div class="absolute inset-0 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Close-up macro photography of fresh coffee beans being ground in a high-quality manual burr grinder. The lighting is warm and dramatic, highlighting the texture of the beans and the golden metal of the grinder. Small fragments of bean are suspended in the air. The overall tone is sophisticated and tactile with deep espresso browns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByCVIUJ3YgkJ_TxSVqT8JIjEfGZrOvtJqirwGEKaq8FLHbB1CocFpmkaZn-iG2QCalD2kjkw7169Ah8rX0w9Of1j4mpZny0b4oT0ZI_reHGyYyyksnaiZY2bUADfr9AikE4Oan3N25eiu1oILH7uX8tgPgWi-F8OzlpWswmxjBZOyZBDV6S0a7jTaqGx7UowfHcTJBQW1xn4OLeUGsYIJB7qrDdwVjszoX1etmxMie_a6zBY-O8w-7ewgdHFr2oqdDX92yipqWXqg"/>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 glass-card rounded-xl flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="settings_input_component"></span>
+</div>
+</div>
+</div>
+<!-- Step 2: Heat the Water -->
+<div class="reveal flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+<div class="relative w-full lg:w-[450px] aspect-square order-1">
+<div class="absolute inset-0 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="An elegant gooseneck kettle pouring a thin, precise stream of steaming water. The kettle is a matte black finish with a soft gold handle. Atmospheric steam curls gently in the air, backlit by a soft amber glow. The setting is a minimalist kitchen with dark textures and high-end ceramics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM1i1io2DEmpS5tzqXvWBBEyHPDBcFQdEl-Xm2MT5mNtsXnO5LVJ106lY0dvukmvJe__ujvNNM-WN6dIwHHEyrVRqF5fzm-_gFJMWETi3DaQJfuj4pBd9a5ZuUgDf7h1bBw2XdMalQU3nV3ccO5HsqJNTNcALeKzbs6jM_yChpeYoBT61XDGEvcCMhqw_7TBt2hSL2yXT3vSjv9RtITcSu4939I77UH1qmaT8LMWY6M9c5j4EksFNGIn3zQIE5jUGmcg2fRZpIppo"/>
+</div>
+<div class="absolute -bottom-6 -left-6 w-32 h-32 glass-card rounded-xl flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="device_thermostat"></span>
+</div>
+</div>
+<div class="flex-1 text-left order-2">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">Step 02</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Heat the Water</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Target a temperature between 195°F and 205°F (90°C-96°C). Boiling water will scorch the grounds, while cooler water won't extract the full complexity of the roast.</p>
+<div class="flex justify-start gap-3">
+<span class="px-3 py-1 glass-card rounded-full font-label-caps text-[10px] text-tertiary">GOOSENECK KETTLE</span>
+<span class="px-3 py-1 glass-card rounded-full font-label-caps text-[10px] text-tertiary">93° CELSIUS</span>
+</div>
+</div>
+</div>
+<!-- Step 3: Brew Perfectly -->
+<div class="reveal flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+<div class="flex-1 text-right order-2 lg:order-1">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">Step 03</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Brew Perfectly</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Begin with a 30-second bloom, pouring just enough water to saturate the grounds. Follow with slow, concentric circles, maintaining a steady flow for a total brew time of 3:30 minutes.</p>
+<div class="flex justify-end gap-3">
+<span class="px-3 py-1 glass-card rounded-full font-label-caps text-[10px] text-tertiary">THE BLOOM</span>
+<span class="px-3 py-1 glass-card rounded-full font-label-caps text-[10px] text-tertiary">3:30 TIMER</span>
+</div>
+</div>
+<div class="relative w-full lg:w-[450px] aspect-square order-1 lg:order-2">
+<div class="absolute inset-0 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A top-down view of a glass pour-over dripper. The coffee 'bloom' is visible as the grounds swell and release bubbles. The liquid is a rich, translucent amber. Soft focus on the carafe below. Lighting is warm and inviting, emphasizing the ritualistic nature of the brewing process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAud6nVhyV5z458t1uiZO_QoHlrGK7SmY7i4A0T-rb4lKwHV5JOo9aFhaPheo7jq3ZV6SFnhBpWN8lqulDHh2nniQhuv5LzGUMJKGSEwDx-Pgzi94XUtwH82g6FcVt77Q1VaLF5NiyJbdEMM3Aj_Oyc58be167XTqEYiX0zxDKIXsnUrr9gUkZnRW5tjV7VQ58iFAAnC_f9eOnpc1Wm3NKliY9d3OH5-awgs6WQ7NADEc6Zc6NoazsninOzEJ8y1VPK1Frv9CV5CaI"/>
+</div>
+<!-- Steam Animation Container -->
+<div class="absolute top-10 left-1/2 -translate-x-1/2 pointer-events-none">
+<div class="steam-particle w-1 h-8 bg-primary/20 blur-md rounded-full mb-2"></div>
+<div class="steam-particle w-1 h-12 bg-primary/10 blur-md rounded-full delay-700"></div>
+<div class="steam-particle w-1 h-6 bg-primary/30 blur-md rounded-full delay-300"></div>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 glass-card rounded-xl flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="hourglass_empty"></span>
+</div>
+</div>
+</div>
+<!-- Step 4: Pour into Mug -->
+<div class="reveal flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+<div class="relative w-full lg:w-[450px] aspect-square order-1">
+<div class="absolute inset-0 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A luxurious ceramic mug being filled with hot coffee from a glass carafe. The mug has a matte cream finish. Steam is rising gracefully. The background is a dark, sophisticated wood grain. Lighting is cinematic and focused on the stream of liquid, creating a feeling of indulgence and quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHtJSix4TN9-fuiy3Nlrt_3-6PMZveohFYRAU39_J6GAiMu-WK3cr52CSMQK8B77phfE888l4u8l0VGsBbpT1HRc2lK6g3jrpcWq4RfBtLQvdr-wOnyepW0giMKGOXTUZVuOFd6xcp8Zkym_jRYS4FZzx3puZ5TfcjKTBwKf3OOn6MIBjcLPLitmWMPI8MIpHtFMFVUoN4slBM1bXcDCUSBwwS32Gx7HXHE6J2iIfqVx9kKxgCBz8dSg-ZpQYGGqtozXrJhdep_mY"/>
+</div>
+<div class="absolute -bottom-6 -left-6 w-32 h-32 glass-card rounded-xl flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="coffee"></span>
+</div>
+</div>
+<div class="flex-1 text-left order-2">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">Step 04</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Pour into Mug</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Swirl the carafe gently to aerate and equalize the brew's temperature. Pour into a pre-warmed ceramic vessel to maintain the thermal profile and enhance the tactile experience.</p>
+<div class="flex justify-start gap-3">
+<span class="px-3 py-1 glass-card rounded-full font-label-caps text-[10px] text-tertiary">PRE-WARMED</span>
+<span class="px-3 py-1 glass-card rounded-full font-label-caps text-[10px] text-tertiary">CERAMIC MUG</span>
+</div>
+</div>
+</div>
+<!-- Step 5: Enjoy the Aroma -->
+<div class="reveal flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+<div class="flex-1 text-right order-2 lg:order-1">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">Step 05</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Enjoy the Aroma</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Pause. Before your first sip, inhale the complex bouquet of notes—from floral jasmine to deep, toasted caramel. Savor the moment; you've crafted excellence.</p>
+<div class="flex justify-end gap-3">
+<span class="px-3 py-1 glass-card rounded-full font-label-caps text-[10px] text-tertiary">AROMATIC NOTES</span>
+<span class="px-3 py-1 glass-card rounded-full font-label-caps text-[10px] text-tertiary">SLOW LIVING</span>
+</div>
+</div>
+<div class="relative w-full lg:w-[450px] aspect-square order-1 lg:order-2">
+<div class="absolute inset-0 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A person's hands holding a warm coffee mug close to their face in a serene, brightly-lit morning setting. The aesthetic is clean, minimalist, and peaceful. Soft sunlight streams in, highlighting the steam. The person looks relaxed and mindful. High-end boutique lifestyle photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4ER0BNA231sbP587PzFaVP3MrhO7bbt3p5QlChqpQOS-bvuzYzh4ICE4BXJV_2KoJmGSDQb-YSCSHxKWRyJqVnDazyZxrFl4r_vjDq7Zgkh9TcLEoIBkJcuJxjK7mhvgHKADve4yaJNmbDHB22yyTi9LRbdX4fATpI6sdnuOqwnM7jodeiNp4HQpYyDe8WDMUufSDC7eg32Kc54g4iIuw516MfIVHrT3gQjCi9sSN66HjV4aSbRZllF8IcbC1BA12xeBJ4fSrG3g"/>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 glass-card rounded-xl flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-lg bg-surface-container-lowest border-y border-outline-variant/10 mt-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-mobile text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Ready to start your ritual?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md max-w-2xl mx-auto">Explore our premium selection of single-origin beans, roasted daily for the perfect cup.</p>
+<div class="flex flex-wrap justify-center gap-stack-sm">
+<button class="bg-primary text-on-primary font-button text-button px-10 py-5 rounded-lg hover:bg-primary-fixed transition-all duration-300 shadow-lg shadow-primary/10">Shop Whole Beans</button>
+<button class="border border-tertiary text-tertiary font-button text-button px-10 py-5 rounded-lg hover:bg-tertiary/5 transition-all duration-300">Brewing Equipment</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full rounded-t-[0.5rem] border-t border-primary-container/20 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md text-primary mb-4">Sip Happens</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Sip Happens. Crafted for the Discerning Palette.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Navigation</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-300 block" href="#">Our Story</a></li>
+<li><a class="font-body-md text-body-md text-primary underline block" href="#">Brewing Guide</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-300 block" href="#">What's New</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-300 block" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-300 block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Contact</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">hello@siphappens.com</p>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-tertiary transition-colors" data-icon="share"></span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-tertiary transition-colors" data-icon="mail"></span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Reveal on scroll effect
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const triggerBottom = window.innerHeight * 0.85;
+            revealElements.forEach(el => {
+                const elTop = el.getBoundingClientRect().top;
+                if(elTop < triggerBottom) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Initial check
+        revealOnScroll();
+
+        // Parallax effect for hero image
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const heroImg = document.querySelector('section img');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scroll * 0.3}px)`;
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Story | Sip Happens</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#fabc46",
+                    "on-primary-container": "#ac9181",
+                    "on-secondary-container": "#342800",
+                    "background": "#131313",
+                    "on-secondary-fixed-variant": "#574500",
+                    "primary-fixed-dim": "#dec1af",
+                    "on-surface-variant": "#d2c4bc",
+                    "on-secondary": "#3c2f00",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#ffdeab",
+                    "secondary-container": "#af8d11",
+                    "on-surface": "#e5e2e1",
+                    "surface-dim": "#131313",
+                    "on-tertiary-fixed": "#271900",
+                    "surface-container": "#20201f",
+                    "surface": "#131313",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed": "#241a00",
+                    "outline": "#9b8e87",
+                    "secondary": "#e9c349",
+                    "primary-fixed": "#fbddca",
+                    "surface-container-highest": "#353535",
+                    "tertiary": "#fabc46",
+                    "surface-variant": "#353535",
+                    "error-container": "#93000a",
+                    "on-tertiary": "#422c00",
+                    "surface-tint": "#dec1af",
+                    "secondary-fixed": "#ffe088",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary-container": "#c48c15",
+                    "on-primary-fixed": "#28180d",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-container": "#402b00",
+                    "error": "#ffb4ab",
+                    "surface-bright": "#393939",
+                    "surface-container-low": "#1c1b1b",
+                    "inverse-primary": "#705a4c",
+                    "primary-container": "#3d2b1f",
+                    "outline-variant": "#4f453f",
+                    "on-tertiary-fixed-variant": "#5f4100",
+                    "surface-container-lowest": "#0e0e0e",
+                    "primary": "#dec1af",
+                    "inverse-on-surface": "#313030",
+                    "on-primary": "#3f2c20",
+                    "on-primary-fixed-variant": "#574335",
+                    "on-background": "#e5e2e1",
+                    "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "stack-sm": "12px",
+                    "margin-mobile": "20px",
+                    "stack-md": "24px",
+                    "stack-lg": "48px",
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "button": ["Montserrat"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Montserrat"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Montserrat"],
+                    "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "button": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(61, 43, 31, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(222, 193, 175, 0.1);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .brew-pulse {
+            animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.3; filter: blur(8px); }
+            50% { opacity: 0.8; filter: blur(12px); box-shadow: 0 0 30px #fabc46; }
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #3d2b1f; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="sticky top-0 w-full z-50 bg-surface/15 backdrop-blur-[20px] border-b border-outline-variant/10 shadow-[0_0_20px_rgba(222,193,175,0.05)] h-20">
+<div class="flex justify-between items-center w-full px-margin-desktop h-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Sip Happens</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-stack-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Home</a>
+<a class="text-primary border-b-2 border-primary pb-1 transition-all duration-300 font-label-caps text-label-caps" href="#">Our Story</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Order Online</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Shop</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Our Menu</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Contact Us</a>
+</div>
+<button class="bg-primary text-on-primary font-button text-button px-6 py-3 rounded-lg hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(222,193,175,0.2)]">
+                Order Now
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[921px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover scale-110" data-alt="A moody, high-end cinematic shot of a luxury boutique coffee lounge at dusk. The interior features deep espresso wood, soft amber lighting hitting artisanal ceramic cups, and a gentle steam rising from a polished chrome espresso machine. The atmosphere is warm, exclusive, and quiet, with rich dark shadows and soft golden highlights reflecting off glass surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBWsRoRJBplJGV8m5xGvrq7CW6v5FRjN5F9nlEn3D4giwE_W-ls-vaV3zh25euvmHrNXyNrSwGnDTK0MHXpfRZ28rwa1mvAequcPqFa0JeDLvH77Vcnzc78_AzOtexSG-f5ReMgVPJEq3kn_GLLA8bdmYWiU-FepJnW9CuNHiQmClcqQ05w5ERAuNem6nO-i_XDB-81iiPYcu_pPgrAhAxC2Ko85_55HaBnpY70WKhR6O1CMgPMnTSfg7uh4M8EFxX9aEJFErp0SU"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile max-w-4xl mx-auto">
+<span class="font-label-caps text-label-caps text-tertiary tracking-[0.2em] mb-stack-sm block scroll-reveal">EST. 2014</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-stack-md italic scroll-reveal">A Symphony of Beans &amp; Ritual.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant/80 max-w-2xl mx-auto scroll-reveal">
+                From a single humble roaster to a sanctuary for the discerning, we believe coffee is more than caffeine—it's the silent witness to our finest moments.
+            </p>
+<div class="mt-stack-lg flex justify-center scroll-reveal">
+<div class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center animate-bounce">
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Narrative Section: The Philosophy -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto grid md:grid-cols-2 gap-stack-lg items-center">
+<div class="scroll-reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">The Slow-Living Philosophy</h2>
+<div class="space-y-stack-md text-on-surface-variant font-body-md leading-relaxed">
+<p>
+                    In an age of instant gratification, <span class="text-tertiary">Sip Happens</span> was born from the desire to pause. We curated a space where the hiss of the steam wand and the aroma of freshly ground single-origin beans dictate the pace of the afternoon.
+                </p>
+<p>
+                    Every roast profile we develop is a months-long conversation between our master roasters and the farmers who nurture the soil. We don't just source coffee; we honor the lineage of every cherry.
+                </p>
+<div class="flex items-center gap-4 pt-4">
+<div class="w-12 h-1px bg-primary/40"></div>
+<span class="italic font-headline-md text-[20px] text-primary">Matthias Thorne, Founder</span>
+</div>
+</div>
+</div>
+<div class="relative scroll-reveal">
+<div class="absolute -top-4 -left-4 w-24 h-24 bg-tertiary-container/30 rounded-full blur-3xl brew-pulse"></div>
+<img alt="" class="rounded-xl shadow-2xl relative z-10 border border-outline-variant/20" data-alt="A macro close-up of a skilled barista's hands performing a pour-over coffee extraction. The lighting is focused and dramatic, highlighting the precise stream of water hitting the dark coffee grounds in a copper dripper. Tiny droplets are frozen in motion, and the rich textures of the artisanal equipment are illuminated against a dark, matte background with a warm golden glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACdQr0GGcjJuawXCbSUsdUDOy4tLQfJ-m47U6BJhEzyz3NUwdtIpxNcjduw-Ef3FIUHmzFaqui2NrIOz0ffOVyXW31iWtw4Vb_niRCsJy-lpckK0jhR2yFbBkSpkFaQx2KDqEicOvY1jGSMaV8Mwoh9ElXesC5CJrOgqAroYwJVWOwDveRgX9PYeNaQhutS1Vg4uQrBz3Bws60c35OzJQoHhbGvHk-XSfDFbrT-T4FVItl99qQwOYr1OP-5dXqGEDJJUf-mnIEJMM"/>
+</div>
+</section>
+<!-- Interactive Timeline -->
+<section class="bg-surface-container-lowest py-24 px-margin-desktop w-full overflow-hidden">
+<div class="max-w-container-max mx-auto text-center mb-16 scroll-reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary">Our Evolution</h2>
+<div class="h-1 w-24 bg-tertiary mx-auto mt-4 rounded-full"></div>
+</div>
+<div class="relative flex flex-col md:flex-row justify-between items-start gap-12 max-w-5xl mx-auto px-4">
+<!-- Timeline Path -->
+<div class="absolute top-0 left-4 md:left-0 md:top-12 md:w-full h-full md:h-1px bg-outline-variant/20 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 group md:text-center scroll-reveal">
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-primary mx-auto mb-4 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
+<span class="text-primary group-hover:text-on-primary font-bold">2014</span>
+</div>
+<h3 class="font-headline-md text-[24px] text-primary mb-2">The First Roaster</h3>
+<p class="text-on-surface-variant max-w-[200px] text-sm md:mx-auto">Started in a garage in East London with a 1kg roaster and a dream.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 group md:text-center scroll-reveal">
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-tertiary mx-auto mb-4 flex items-center justify-center group-hover:bg-tertiary transition-colors duration-500">
+<span class="text-tertiary group-hover:text-on-tertiary font-bold">2017</span>
+</div>
+<h3 class="font-headline-md text-[24px] text-primary mb-2">The Sanctuary Opens</h3>
+<p class="text-on-surface-variant max-w-[200px] text-sm md:mx-auto">Opened our flagship boutique lounge, a haven of glass and matte black steel.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 group md:text-center scroll-reveal">
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-primary mx-auto mb-4 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
+<span class="text-primary group-hover:text-on-primary font-bold">2021</span>
+</div>
+<h3 class="font-headline-md text-[24px] text-primary mb-2">Direct Trade Network</h3>
+<p class="text-on-surface-variant max-w-[200px] text-sm md:mx-auto">Formed direct partnerships with 15 regenerative farms in Ethiopia and Brazil.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 group md:text-center scroll-reveal">
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-tertiary mx-auto mb-4 flex items-center justify-center group-hover:bg-tertiary transition-colors duration-500">
+<span class="text-tertiary group-hover:text-on-tertiary font-bold">2024</span>
+</div>
+<h3 class="font-headline-md text-[24px] text-primary mb-2">The Ritual Continued</h3>
+<p class="text-on-surface-variant max-w-[200px] text-sm md:mx-auto">Expanding our digital workshop to teach the art of the perfect brew worldwide.</p>
+</div>
+</div>
+</section>
+<!-- Bento Gallery -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-lg text-center">Capture the Atmosphere</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-[800px] md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 rounded-xl overflow-hidden group relative scroll-reveal">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A wide-angle interior view of an elegant, modern cafe with floor-to-ceiling windows. The decor features minimalist mid-century modern furniture, soft velvet upholstery in espresso brown, and numerous indoor plants. The natural light creates long shadows across the polished concrete floor, and the overall mood is serene, upscale, and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACyqFp-RD66pHavET03vD5OQeY_9Id5jRcRRwr__3U8PTKTIJLTzWgdeWjCEHtlwLSJX0cAv8iKIiJ9xmJSr78AbiKQhPvnF9ngjT9hLRtARCY9-nc_HmjeWcghh7lBBK2sMb2b9veBFDW1y8U56L5hcORgb60lGwwdDGBrzMTwgj8DKv2Bb8-BI9OXVvc9t38mKMy76_Fa1zj21C6MWZKEYCs41IW3YeTlq4gpa5TllT5c9gX440ThP_wRIeNz55cnHyWEZXYzzM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+<span class="text-primary font-headline-md text-[24px]">Our Main Atrium</span>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden group relative scroll-reveal">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A detailed shot of a boutique coffee shop counter. Several high-end, matte-finish coffee accessories, including a copper kettle, silver scale, and dark ceramic mugs, are arranged artistically. The background shows blurred warm lights and a chalkboard menu. The style is clean, modern, and highlights tactile craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB41lAH_fB_gupOpWy56tjYEYTX5AfPD9b9toq9fl_CcputVzBjdbW_Awlb41rpPqofgNlfrRa6_EbzN0swGz08lusq4m46Hg3Vcf9vO7Q7PuWKQyXmGyglb3XraJ5bdjAnfZDn-PZlN7ULmK8klAVb8pMB3cTnvwcoL8O8KDCgaudIkarRS1WUBgBs2nYFwRmE64VPdGt_qS8I0T3pyH6iIPTyCtltAjaPNYkMmL8tAX97oFtn6xX4nxqPQ9uZrVO8S2rH4XK2aio"/>
+</div>
+<div class="rounded-xl overflow-hidden group relative scroll-reveal">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A beautifully poured latte in a dark, artisanal ceramic cup sitting on a rustic wooden table. The latte art is a perfect, intricate rosetta. Soft daylight filters in from the side, creating a bright but cozy morning aesthetic. A single small green leaf is placed beside the saucer, adding a touch of natural color to the earthy palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4UKK-jOUbb734Y7PmK3wt37TCiFk8xTi0-volDFKD3gles7poxy5ObUDrHuF8N68cEunqMab1Njray3owBDlCghQERslob5l9j08J3voA1esTCr3vAPfg7S8zvcEycl7uXIVlmeXFDv1OO5BdRlL9eHFiBEWXg4OHPVU3nYecXnh6J5F-SNqNmWpg2QEtWbdimbkcekHxQbmVZQTq12Vzl1p3a-eDBn2PFu_GhcT-X70pcwydC9RNBn4yuDtAOF7lXAA7-5FycmA"/>
+</div>
+<div class="md:col-span-2 rounded-xl overflow-hidden group relative scroll-reveal">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic night shot of the coffee shop's exterior. The logo 'Sip Happens' is illuminated in a soft golden neon on a dark matte facade. People can be seen through large glass windows enjoying their drinks in a warm, amber-lit interior. The street outside is dark and slightly wet, reflecting the city lights in a moody, urban evening setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV0CRrRUwpTGNfbym86anNJ0YEmURG_Q_ARXiicMubQDbzcQCVm84QcgG_F1O1XCDj1SJvjJOOtEzQJM4TuEjdB6rv5jbtVCtfKGV6qcuhkbUbEs_r08IskEQoeTBrqYp-_JIvSXtIzOJlPg0ZnsT6UsIoJOeMlAQ_IfJ0s91y7_PUSdpUlE_tAz4e_MZ4GcQXdx3L-lKPj39MmS2cTzu_00KyMZUSt-yd4AGTu4L_wArrdALPzAulP9pwvVIykrAz4s7bbSXc2es"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+<span class="text-primary font-headline-md text-[24px]">Late Night Rituals</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-24 px-margin-desktop text-center bg-surface-container-low scroll-reveal">
+<div class="max-w-2xl mx-auto glass-card p-12 rounded-2xl relative overflow-hidden">
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl brew-pulse"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Experience the Ritual</h2>
+<p class="text-on-surface-variant font-body-md mb-8">Join us for a tasting session or simply find your new favorite corner. We've been waiting for you.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary font-button text-button px-10 py-4 rounded-full hover:scale-105 transition-transform duration-300">
+                    Visit Our Roastery
+                </button>
+<button class="border border-tertiary text-tertiary font-button text-button px-10 py-4 rounded-full hover:bg-tertiary/10 transition-colors duration-300">
+                    Browse the Shop
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full rounded-t-[0.5rem] border-t border-primary-container/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<div class="font-headline-md text-headline-md text-primary">Sip Happens</div>
+<p class="text-on-surface-variant text-sm max-w-xs">Elevating the coffee ritual through sustainable sourcing and cinematic atmosphere.</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-primary mb-2">Discover</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Our Story</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Brewing Guide</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">What's New</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-primary mb-2">Community</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contact Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary mb-2">Connect</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors">alternate_email</span>
+</div>
+<div class="mt-4 text-[10px] text-on-surface-variant/40 tracking-widest">© 2024 SIP HAPPENS. CRAFTED FOR THE DISCERNING PALETTE.</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Subtle Parallax effect on Hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.querySelector('header img');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scrolled * 0.3}px) scale(1.1)`;
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sip Happens | Every Sip Tells a Story</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-fixed-dim": "#fabc46",
+                "on-primary-container": "#ac9181",
+                "on-secondary-container": "#342800",
+                "background": "#131313",
+                "on-secondary-fixed-variant": "#574500",
+                "primary-fixed-dim": "#dec1af",
+                "on-surface-variant": "#d2c4bc",
+                "on-secondary": "#3c2f00",
+                "on-error": "#690005",
+                "tertiary-fixed": "#ffdeab",
+                "secondary-container": "#af8d11",
+                "on-surface": "#e5e2e1",
+                "surface-dim": "#131313",
+                "on-tertiary-fixed": "#271900",
+                "surface-container": "#20201f",
+                "surface": "#131313",
+                "secondary-fixed-dim": "#e9c349",
+                "on-secondary-fixed": "#241a00",
+                "outline": "#9b8e87",
+                "secondary": "#e9c349",
+                "primary-fixed": "#fbddca",
+                "surface-container-highest": "#353535",
+                "tertiary": "#fabc46",
+                "surface-variant": "#353535",
+                "error-container": "#93000a",
+                "on-tertiary": "#422c00",
+                "surface-tint": "#dec1af",
+                "secondary-fixed": "#ffe088",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary-container": "#c48c15",
+                "on-primary-fixed": "#28180d",
+                "surface-container-high": "#2a2a2a",
+                "tertiary-container": "#402b00",
+                "error": "#ffb4ab",
+                "surface-bright": "#393939",
+                "surface-container-low": "#1c1b1b",
+                "inverse-primary": "#705a4c",
+                "primary-container": "#3d2b1f",
+                "outline-variant": "#4f453f",
+                "on-tertiary-fixed-variant": "#5f4100",
+                "surface-container-lowest": "#0e0e0e",
+                "primary": "#dec1af",
+                "inverse-on-surface": "#313030",
+                "on-primary": "#3f2c20",
+                "on-primary-fixed-variant": "#574335",
+                "on-background": "#e5e2e1",
+                "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-desktop": "64px",
+                "stack-sm": "12px",
+                "margin-mobile": "20px",
+                "stack-md": "24px",
+                "stack-lg": "48px",
+                "unit": "8px",
+                "container-max": "1280px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "headline-md": ["Playfair Display"],
+                "button": ["Montserrat"],
+                "display-lg": ["Playfair Display"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "body-md": ["Montserrat"],
+                "headline-lg": ["Playfair Display"],
+                "body-lg": ["Montserrat"],
+                "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                "button": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(61, 43, 31, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(222, 193, 175, 0.1);
+        }
+        .brew-pulse {
+            animation: pulse-gold 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0); }
+            50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.25); }
+        }
+        .parallax-hero {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-surface/15 backdrop-blur-[20px] border-b border-outline-variant/10 shadow-[0_0_20px_rgba(222,193,175,0.05)]">
+<nav class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Sip Happens</div>
+<div class="hidden md:flex items-center space-x-stack-md">
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 transition-all duration-300" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Our Story</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Order Online</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Shop</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Our Menu</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact Us</a>
+</div>
+<div class="flex items-center space-x-unit">
+<button class="font-button text-button bg-primary text-on-primary px-stack-md py-3 rounded-full hover:scale-95 transition-transform duration-200">Order Now</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0 parallax-hero" data-alt="A cinematic, high-definition close-up of a premium matte black ceramic coffee mug with wisps of ethereal steam rising gracefully in a dark, moody boutique lounge setting. The lighting is low-key and dramatic, catching the soft gold glints of the coffee's surface and the texture of the ceramic. The overall aesthetic is ultra-luxurious, emphasizing the 'slow-living' ritual with deep espresso browns and warm caramel highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2M0GbC-JgtzQZMFsxZdbAmNJ2XISzXC9Ut19Ock9Zk2KWVlLaQRunuQonw7RW1N9p6IP3OHDniDgvG78ydGFBeRddCuJ9o1jBF-M2xdz6kAKJ_5BRjOSROeseojIddkv_HaEOqnafbEm59n2qii4aOTYNaJOU6LHz3HmFwK6rUVgxwaTmxgNODb5tNiLND7Tg6tNwCDWOZ955eWNAMef7ie3yDwH2qOlf3zFNb4gfkSJ_n4LnOZ_neT0Z0-TlmcZRQcNJSXo-x9A')">
+<div class="absolute inset-0 bg-black/50"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-margin-mobile">
+<h1 class="font-display-lg text-display-lg text-primary mb-stack-sm animate-fade-in-up">Every Sip Tells a Story</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg italic">Brewed for Moments That Matter</p>
+<div class="flex flex-col md:flex-row gap-stack-md justify-center">
+<button class="brew-pulse font-button text-button bg-primary text-on-primary px-10 py-5 rounded-full transition-all duration-300 hover:bg-primary-fixed-dim">
+                        Order Now
+                    </button>
+<button class="font-button text-button border border-secondary text-secondary px-10 py-5 rounded-full hover:bg-secondary/10 transition-all duration-300">
+                        Explore Menu
+                    </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-primary text-4xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Top Selling Products -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col items-center mb-16">
+<span class="font-label-caps text-label-caps text-tertiary mb-2 uppercase tracking-[0.2em]">Our Favorites</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Top Selling Masterpieces</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-lg">
+<!-- Product Card 1 -->
+<div class="glass-card group p-6 rounded-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="relative overflow-hidden rounded-lg aspect-square mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A perfectly crafted Cappuccino with intricate latte art on top, presented in a designer ceramic cup on a dark stone coaster. The image features warm, soft-focus background elements of a high-end espresso machine and gold-toned kitchen accessories. Professional studio lighting emphasizes the creamy texture of the foam and the rich espresso base, adhering to a cinematic minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQhDfocID0fzJuq0NgdEF_Y591Cdt7YHOs9wj6tPueAt1hY14VnxlNZaiz6OUxoEoctwycLDd7Zd_OmyInxx1z157yeVEWSYjoAawVg25IEotqe2TEYkzJA_H3vSA4MgLpaEQN37C1q-neWjHmj5GGfM-OumET7onn0Jghb7G3WuHisI6ixlZyAF39c0ykvlbYGlKQJEFq5Ld5NXSu2sI4HQ7E9kzPHA3G64N67Fi2uXRIv2GetsiX4JW0jiTeMShpO2kqAw2SoD4"/>
+<div class="absolute top-4 right-4 bg-primary/90 backdrop-blur-md px-3 py-1 rounded-full">
+<span class="font-label-caps text-label-caps text-on-primary">$6.50</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Cappuccino</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Triple-shot espresso with velvety micro-foam and a hint of cocoa.</p>
+<button class="w-full font-button text-button py-4 border border-primary/20 text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span> Add to Cart
+                    </button>
+</div>
+<!-- Product Card 2 -->
+<div class="glass-card group p-6 rounded-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="relative overflow-hidden rounded-lg aspect-square mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A single shot of intense Espresso in a tiny, sleek glass cup, showing perfect crema layers. The shot is placed on a dark wooden surface with scattered coffee beans around it. The lighting is focused and warm, highlighting the viscosity of the coffee and its deep mahogany color, set against a dark, out-of-focus cafe background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBww2KUfQbv2kAqRgHHOpCHZPvlnMt2tUg14aCZvHRtGRrm2MvJjMn-AzG1-xdWG95N62ZL77icpu0B0EyM8MDC1pMfiL3SYNsaKHcd4xzwpE-EF_5Ed4AmyT28L6jBzkZ8g4CwH3Cob6rlEBnQ9mRkx49qiGi922FP2UyWHb6ghXCoXp3w3JcmnXKf1cDZWnLZSPCJ8FbdTBdo5tGFJhjmhVWUBGhKJVVo7rKOd2YOl5KrUFRrxb0ZKeM1-LUDdnqwWmqrDIwZHk"/>
+<div class="absolute top-4 right-4 bg-primary/90 backdrop-blur-md px-3 py-1 rounded-full">
+<span class="font-label-caps text-label-caps text-on-primary">$4.00</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Espresso</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Concentrated soul of the bean, extracted for 28 seconds of perfection.</p>
+<button class="w-full font-button text-button py-4 border border-primary/20 text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span> Add to Cart
+                    </button>
+</div>
+<!-- Product Card 3 -->
+<div class="glass-card group p-6 rounded-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="relative overflow-hidden rounded-lg aspect-square mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A tall, elegant glass filled with Cold Brew coffee over large crystal-clear ice cubes. Swirls of cream are slowly mixing into the dark coffee, creating a beautiful marbled effect. The scene is shot from a low angle on a matte black table, with soft morning light filtering through a window, creating a serene, sophisticated atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDamLail-V-wfaHMm-vuSoTVQXuBMgqmBA2pCg-6aEghIHuVRFw0K5LOfS-AvE3vwzoZZJ7ejaceHRPwcl8GdbsOIBQSL17cDaFEhnZxD5f0TxcHi1pYTbx1fqm4N9DKLMAOVfn9eM8CHtmsrWSpsVhYUdQ_X0uMFA6cizvDdckn-uc3ZT5390EtSbPVkIc3JFrCHxTNYoxo1lB_ei9PV9leXWrnYxuy-nkjLC4khMUcwJHcDgV5QV6brkXbDP5tG7Q0fyNd-2gQEM"/>
+<div class="absolute top-4 right-4 bg-primary/90 backdrop-blur-md px-3 py-1 rounded-full">
+<span class="font-label-caps text-label-caps text-on-primary">$7.25</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Cold Brew</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Slow-steeped for 18 hours for a smooth, low-acid, high-caffeine finish.</p>
+<button class="w-full font-button text-button py-4 border border-primary/20 text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span> Add to Cart
+                    </button>
+</div>
+<!-- Product Card 4 -->
+<div class="glass-card group p-6 rounded-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="relative overflow-hidden rounded-lg aspect-square mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A Hazelnut Latte in a tall ceramic mug with a light dusting of hazelnut powder and cinnamon. The mug sits on a soft cream linen napkin beside an open book. The lighting is warm and diffused, suggesting a cozy afternoon in a high-end library cafe. The colors are dominated by soft tans, creams, and golden browns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk75r1JUEultZLzBJUTTQ5dH3xyE_YoA1jian9Ju4pWzGa4WVfssHGVxQLSdVC-FH6qa__M-5K5BxsKyvoDY-GjXTmPohdvE5f-ce0unURpm7Hw_UW9D0lUqx5w3tC3BWT2BNlfvm8NEb7edhDT7yLUDcKdwhDruQ07bCxWjYYTc6ChFSHe5F4uygTFzcvrsmB1QuJMte9pLr0uYjjLa806QnLol2PF7JAubxi0sQL67Vn6SCyGKvhHCP8zT3gZY3-lg6tcVPg-m0"/>
+<div class="absolute top-4 right-4 bg-primary/90 backdrop-blur-md px-3 py-1 rounded-full">
+<span class="font-label-caps text-label-caps text-on-primary">$7.50</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Hazelnut Latte</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Artisanal hazelnut syrup blended with steamed milk and blonde espresso.</p>
+<button class="w-full font-button text-button py-4 border border-primary/20 text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span> Add to Cart
+                    </button>
+</div>
+<!-- Product Card 5 -->
+<div class="glass-card group p-6 rounded-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="relative overflow-hidden rounded-lg aspect-square mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A decadent Mocha Delight topped with a generous swirl of whipped cream and dark chocolate shavings. The drink is served in a double-walled glass cup that shows the beautiful layers of chocolate sauce, coffee, and milk. The setting is a modern kitchen with matte black finishes and soft gold fixtures, illuminated by accent lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgc-UJtgZYiWCO8W6gir_c_q4YBsaZm7C7O55rRz473s2EMQbQD1ZdQEZk4iWfi_Wq19nOPDbvUED6I3sBtzio9tFC6PmVnTZRprEzmI7E85pvHuQwviS-WxfEvhseSdwCrYBIcmO3udUzg7GkzW-F6UVPG4pCgXbiAIPk9EYBOtCzlz7iHCLEL9UB2ExUW6LqomaNkFWKaAOL3YX7U_wCEZhLsdKgtnIRacjRr4D2Z_D7HzwGYpDQvIiZJpYG35lTPCtlAmS6134"/>
+<div class="absolute top-4 right-4 bg-primary/90 backdrop-blur-md px-3 py-1 rounded-full">
+<span class="font-label-caps text-label-caps text-on-primary">$8.00</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Mocha Delight</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Rich Valrhona chocolate fused with our signature espresso roast.</p>
+<button class="w-full font-button text-button py-4 border border-primary/20 text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span> Add to Cart
+                    </button>
+</div>
+<!-- Product Card 6 -->
+<div class="glass-card group p-6 rounded-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="relative overflow-hidden rounded-lg aspect-square mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A Vanilla Cream Coffee served in an artisanal ceramic bowl-style mug. The drink features a thick layer of vanilla bean infused cream on top of dark roasted coffee. The image capture includes a wooden serving tray and a small sprig of dried lavender. The aesthetic is Japandi minimalist, with clean lines and natural textures in a dark setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4v4wFBhdVyLnAHVmyCrood9eJbbap37w5myETZta9lQsl_AGwE7upTkMZ9M7Qqtx84Vx8nUGW1q7v31Q2-MiMfp8FG_oqglT2IWUQbyfg69YnqFAPf0TRCClFLthlreQtNVjOEuO8xv2CpmC6A66hmsT1kEATXY1-Mpx160YuohiIx9CDPzyI4mJc0Nmvcb8WM3TF7r3bsyfVzrN7felzdx3R8I8wv0gTmiU2d6tdOKidWXhBykQQXRe_CjKpjweG4EuFcrMZ4qI"/>
+<div class="absolute top-4 right-4 bg-primary/90 backdrop-blur-md px-3 py-1 rounded-full">
+<span class="font-label-caps text-label-caps text-on-primary">$6.95</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Vanilla Cream</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">A lighter roast paired with Madagascar vanilla bean and heavy cream.</p>
+<button class="w-full font-button text-button py-4 border border-primary/20 text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span> Add to Cart
+                    </button>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col items-start mb-16">
+<span class="font-label-caps text-label-caps text-tertiary mb-2 uppercase tracking-[0.2em]">The Experience</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Cured Aesthetics</h2>
+</div>
+<div class="grid grid-cols-12 gap-gutter h-[800px]">
+<div class="col-span-8 h-full rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="An atmospheric, ultra-HD shot of a professional barista's hands carefully pouring micro-foam into an espresso to create a complex heart pattern. The steam wand is visible in the background with a soft glow, and the espresso machine's polished chrome surfaces reflect the warm shop lighting. The mood is one of intense focus and artisanal craftsmanship in a high-end dark-themed cafe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXBOfzrsGwGGO5iPs5xI7kcUoHZeB935k5c50MFxQm-HnOlN6wiCxx_tRPOTJ5RIzR8IcwksfKKybmkh9GtCNL2xVfFvY-NNm4kqSo7-Dqg5ormUKeDB90NHOk4Mhg0F5BZNqPP7eQNnbucl-ZCaUnwKQLEtB6Xhxv4O_dVwpcq87P4_6jEd36cgF_glLzDjZFNDybyOv6FTZBt0cusdSlc70JQzNIlrdgyzmVlR2orvO55dIC_koRK55mFq9UveTNeQYilLbpniQ"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+</div>
+<div class="col-span-4 flex flex-col gap-gutter h-full">
+<div class="h-1/2 rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A lifestyle shot of two elegant coffee cups on a marble table in a boutique cafe. A minimalist gold spoon rests on a saucer, and a small vase with a single dried flower is placed nearby. The scene is illuminated by soft, natural light coming from an unseen window, creating long shadows and highlighting the premium textures of the setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAHZDJtSZcaTk2ji5E6g99k6xND6TLBM8ubKvYywlsUM7UdCd11fuRFQB4A7HwLS6W4kP4jobanf3d1sZHozCqYVL6fzDvoOiRe6n-947OPkYIZVpjl8EiwIvVEB2gbeoXvlnXIlZWIx9iHlAa8W83cM0JUm6kFKQYIjPWbWqQIfnvt7icqRidhe1qzp5ySBDhyD7SnKMgf02Ya2-se76GD0jd-7pKqhIJORMLfBuCoXi_FzISTojJkD4xkvW_XwxyEhun7xReCOE"/>
+</div>
+<div class="h-1/2 rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A wide-angle interior shot of a high-end, dark-aesthetic coffee lounge. The design features industrial-chic elements like exposed brick painted black, warm walnut wood furniture, and soft gold pendant lights. Patrons are seen in soft-focus, enjoying the quiet, hushed exclusivity of the environment. The atmosphere is sophisticated and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_-diYziroShJ3HUzf50R-GvvrVc49Sm4edfS2DgW9lwIzaccpeTkVzQlNN2CMNs6R9d5zNU3xRUbXO8AeXPSGLsUgonrlS0zR6DAPbAsLqJSCuDQmqFZKb_yNtpnMQyLGtB1s58ixRU-hZ04oAmkq49ZcuGT9TH2TDsuLy2KQzJdsY7hPsGMGM2OB82KIAesVeolUTuzVwrM978wum2VxbJUV3n8rJ_OUb5JzQgSV-QemSE97mUMk-9SFV15jVZ7b3AEdOIOL9O4"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="py-24 px-margin-desktop text-center">
+<div class="max-w-2xl mx-auto glass-card p-12 rounded-2xl border-t border-primary/20">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Join the Sip Registry</h2>
+<p class="font-body-md text-on-surface-variant mb-stack-md">Receive exclusive access to seasonal blends and private tasting events.</p>
+<form class="flex flex-col md:flex-row gap-4" onsubmit="event.preventDefault()">
+<input class="flex-grow bg-black/40 border border-primary-container/50 rounded-lg px-6 py-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Your email address" type="email"/>
+<button class="font-button text-button bg-primary text-on-primary px-8 py-4 rounded-lg hover:bg-primary-fixed-dim transition-all">Subscribe</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[0.5rem] bg-surface-container-lowest border-t border-primary-container/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="flex flex-col gap-stack-sm">
+<div class="font-headline-md text-headline-md text-primary">Sip Happens</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[200px]">Elevating your daily ritual through artisanal roasting and mindful brewing.</p>
+</div>
+<div class="flex flex-col gap-unit">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-2">Explore</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300" href="#">Our Story</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300" href="#">Brewing Guide</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300" href="#">What's New</a>
+</div>
+<div class="flex flex-col gap-unit">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-2">Support</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-2">Connect</span>
+<div class="flex gap-stack-sm">
+<a class="text-primary hover:text-tertiary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-primary hover:text-tertiary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-primary hover:text-tertiary transition-colors" href="#"><span class="material-symbols-outlined">chat_bubble</span></a>
+</div>
+</div>
+</div>
+<div class="text-center py-stack-md border-t border-outline-variant/5">
+<p class="font-label-caps text-label-caps text-on-surface-variant/50">© 2024 Sip Happens. Crafted for the Discerning Palette.</p>
+</div>
+</footer>
+<script>
+        // Simple parallax effect for hero image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.parallax-hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.4}px)`;
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
+            observer.observe(card);
+        });
+    </script>
+</body></html>
