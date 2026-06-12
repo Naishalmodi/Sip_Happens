@@ -107,7 +107,7 @@ export default function Home({ onAddToCart }) {
                     alt={item.name}
                   />
                   <div className="absolute top-4 right-4 bg-primary/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-primary/20">
-                    <span className="font-label-caps text-label-caps text-on-primary font-bold">${item.price.toFixed(2)}</span>
+                    <span className="font-label-caps text-label-caps text-on-primary font-bold">₹{item.price}</span>
                   </div>
                 </div>
 

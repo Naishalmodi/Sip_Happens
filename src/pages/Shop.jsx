@@ -14,7 +14,8 @@ export default function Shop({ onAddToCart }) {
     'Cold Coffee',
     'Premium Beans',
     'Coffee Combos',
-    'Limited Edition'
+    'Limited Edition',
+    'Desserts'
   ];
 
   const handleAddToCartWithFeedback = (item) => {
@@ -173,7 +174,7 @@ export default function Shop({ onAddToCart }) {
                     <h3 className="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors pr-2">
                       {item.name}
                     </h3>
-                    <span className="text-secondary font-bold text-lg">${item.price.toFixed(2)}</span>
+                    <span className="text-secondary font-bold text-lg">₹{item.price}</span>
                   </div>
                   <p className="text-on-surface-variant font-body-md text-sm mb-6 leading-relaxed">
                     {item.description}
@@ -254,7 +255,7 @@ export default function Shop({ onAddToCart }) {
                   <h3 className="font-headline-md text-headline-md text-primary mt-1 pr-6 leading-tight">{quickViewProduct.name}</h3>
                 </div>
 
-                <div className="text-secondary font-bold text-xl">${quickViewProduct.price.toFixed(2)}</div>
+                <div className="text-secondary font-bold text-xl">₹{quickViewProduct.price}</div>
                 
                 <p className="text-on-surface-variant text-sm leading-relaxed">{quickViewProduct.details || quickViewProduct.description}</p>
                 

@@ -52,7 +52,7 @@ export default function App() {
   const handleAddToCart = (product) => {
     const existing = cartItems.find((item) => item.id === product.id);
     if (existing) {
-      const updated = cartItems.map((item) => 
+      const updated = cartItems.map((item) =>
         item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
       );
       saveCart(updated);
@@ -67,7 +67,7 @@ export default function App() {
       handleRemoveItem(productId);
       return;
     }
-    const updated = cartItems.map((item) => 
+    const updated = cartItems.map((item) =>
       item.id === productId ? { ...item, quantity: newQuantity } : item
     );
     saveCart(updated);
@@ -88,14 +88,14 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      
+
       {/* Shell Layout */}
       <div className="flex flex-col min-h-screen">
-        
+
         {/* Navigation Header */}
-        <Header 
-          cartCount={totalCartCount} 
-          onCartClick={() => setIsCartOpen(true)} 
+        <Header
+          cartCount={totalCartCount}
+          onCartClick={() => setIsCartOpen(true)}
         />
 
         {/* Content Routes */}
@@ -112,9 +112,9 @@ export default function App() {
 
         {/* Shared Footer */}
         <Footer />
-        
+
         {/* Sliding Shopping Cart Drawer */}
-        <CartDrawer 
+        <CartDrawer
           isOpen={isCartOpen}
           onClose={() => setIsCartOpen(false)}
           cartItems={cartItems}
@@ -127,7 +127,7 @@ export default function App() {
         />
 
         {/* Dynamic Order & Checkout Modal */}
-        <CheckoutModal 
+        <CheckoutModal
           isOpen={isCheckoutOpen}
           onClose={() => setIsCheckoutOpen(false)}
           cartItems={cartItems}

@@ -2,7 +2,7 @@ export const products = [
   {
     id: "cappuccino",
     name: "Cappuccino",
-    price: 6.50,
+    price: 420,
     category: "Hot Coffee",
     description: "Triple-shot espresso with velvety micro-foam and a hint of cocoa.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAQhDfocID0fzJuq0NgdEF_Y591Cdt7YHOs9wj6tPueAt1hY14VnxlNZaiz6OUxoEoctwycLDd7Zd_OmyInxx1z157yeVEWSYjoAawVg25IEotqe2TEYkzJA_H3vSA4MgLpaEQN37C1q-neWjHmj5GGfM-OumET7onn0Jghb7G3WuHisI6ixlZyAF39c0ykvlbYGlKQJEFq5Ld5NXSu2sI4HQ7E9kzPHA3G64N67Fi2uXRIv2GetsiX4JW0jiTeMShpO2kqAw2SoD4",
@@ -14,7 +14,7 @@ export const products = [
   {
     id: "espresso",
     name: "Espresso",
-    price: 4.00,
+    price: 350,
     category: "Hot Coffee",
     description: "Concentrated soul of the bean, extracted for 28 seconds of perfection.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBBww2KUfQbv2kAqRgHHOpCHZPvlnMt2tUg14aCZvHRtGRrm2MvJjMn-AzG1-xdWG95N62ZL77icpu0B0EyM8MDC1pMfiL3SYNsaKHcd4xzwpE-EF_5Ed4AmyT28L6jBzkZ8g4CwH3Cob6rlEBnQ9mRkx49qiGi922FP2UyWHb6ghXCoXp3w3JcmnXKf1cDZWnLZSPCJ8FbdTBdo5tGFJhjmhVWUBGhKJVVo7rKOd2YOl5KrUFRrxb0ZKeM1-LUDdnqwWmqrDIwZHk",
@@ -26,7 +26,7 @@ export const products = [
   {
     id: "cold-brew",
     name: "Cold Brew",
-    price: 7.25,
+    price: 450,
     category: "Cold Coffee",
     description: "Slow-steeped for 18 hours for a smooth, low-acid, high-caffeine finish.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDamLail-V-wfaHMm-vuSoTVQXuBMgqmBA2pCg-6aEghIHuVRFw0K5LOfS-AvE3vwzoZZJ7ejaceHRPwcl8GdbsOIBQSL17cDaFEhnZxD5f0TxcHi1pYTbx1fqm4N9DKLMAOVfn9eM8CHtmsrWSpsVhYUdQ_X0uMFA6cizvDdckn-uc3ZT5390EtSbPVkIc3JFrCHxTNYoxo1lB_ei9PV9leXWrnYxuy-nkjLC4khMUcwJHcDgV5QV6brkXbDP5tG7Q0fyNd-2gQEM",
@@ -38,7 +38,7 @@ export const products = [
   {
     id: "hazelnut-latte",
     name: "Hazelnut Latte",
-    price: 7.50,
+    price: 480,
     category: "Hot Coffee",
     description: "Artisanal hazelnut syrup blended with steamed milk and blonde espresso.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCk75r1JUEultZLzBJUTTQ5dH3xyE_YoA1jian9Ju4pWzGa4WVfssHGVxQLSdVC-FH6qa__M-5K5BxsKyvoDY-GjXTmPohdvE5f-ce0unURpm7Hw_UW9D0lUqx5w3tC3BWT2BNlfvm8NEb7edhDT7yLUDcKdwhDruQ07bCxWjYYTc6ChFSHe5F4uygTFzcvrsmB1QuJMte9pLr0uYjjLa806QnLol2PF7JAubxi0sQL67Vn6SCyGKvhHCP8zT3gZY3-lg6tcVPg-m0",
@@ -50,7 +50,7 @@ export const products = [
   {
     id: "mocha-delight",
     name: "Mocha Delight",
-    price: 8.00,
+    price: 520,
     category: "Hot Coffee",
     description: "Rich Valrhona chocolate fused with our signature espresso roast.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBgc-UJtgZYiWCO8W6gir_c_q4YBsaZm7C7O55rRz473s2EMQbQD1ZdQEZk4iWfi_Wq19nOPDbvUED6I3sBtzio9tFC6PmVnTZRprEzmI7E85pvHuQwviS-WxfEvhseSdwCrYBIcmO3udUzg7GkzW-F6UVPG4pCgXbiAIPk9EYBOtCzlz7iHCLEL9UB2ExUW6LqomaNkFWKaAOL3YX7U_wCEZhLsdKgtnIRacjRr4D2Z_D7HzwGYpDQvIiZJpYG35lTPCtlAmS6134",
@@ -62,7 +62,7 @@ export const products = [
   {
     id: "vanilla-cream",
     name: "Vanilla Cream Coffee",
-    price: 6.95,
+    price: 460,
     category: "Cold Coffee",
     description: "A lighter roast paired with Madagascar vanilla bean and heavy cream.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD4v4wFBhdVyLnAHVmyCrood9eJbbap37w5myETZta9lQsl_AGwE7upTkMZ9M7Qqtx84Vx8nUGW1q7v31Q2-MiMfp8FG_oqglT2IWUQbyfg69YnqFAPf0TRCClFLthlreQtNVjOEuO8xv2CpmC6A66hmsT1kEATXY1-Mpx160YuohiIx9CDPzyI4mJc0Nmvcb8WM3TF7r3bsyfVzrN7felzdx3R8I8wv0gTmiU2d6tdOKidWXhBykQQXRe_CjKpjweG4EuFcrMZ4qI",
@@ -74,7 +74,7 @@ export const products = [
   {
     id: "midnight-velvet-beans",
     name: "Midnight Velvet Espresso Beans",
-    price: 18.00,
+    price: 1250,
     category: "Premium Beans",
     description: "Dark roast with notes of smoked cocoa and wild blackberries.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC8NQ5NEYfeVJVSrgd7p7CHXrcawRwI_k5N7WS4N890fe0rkdY8oU8RjA7mUQX23GIhQT4p9Mkr9-cbtGBkITtZWRFVO8UmhodUKL7gfSKAF3v9P87IFQC67q369zPPp8ARDJlrZlEIg5GFBd63QmNu4m6mZAvI9eO9nffUYMfxG-M4Ub9K25X2aBAqGsTqP3Iy03u5RYKgh26xWobDZguRqKXWVSq9ixTQ7hy1hw4Uy1arPJKphfMhb3YWlgV5CZ6g4vJpk_gw9CY",
@@ -86,7 +86,7 @@ export const products = [
   {
     id: "sun-drenched-ethiopian-beans",
     name: "Sun-Drenched Ethiopian Beans",
-    price: 22.50,
+    price: 1650,
     category: "Premium Beans",
     description: "Single-origin light roast featuring floral hibiscus and citrus zest.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBAqZVzHQmlyPkPntecKVzN5KooJzHXFPc4gnE5eYGaLdMhbXfMLjp69HpuwnK0SIwGTob0DwVDuEODYHZ1ehrXLIq1s3M1Y4qQYRKFGNn16uQGc72PRFyS_t6l4-h15n0ilNJ-FfI4AbuhqSrE51fNywUu82dwIEga3P3Y5oTI6MtcAKaUakB7znkwOtpsNo-nxetm8vEiFLo2LG2YJglcYpjG747LMDuZompBfF0AfXUk01oH44jSEp_ge7C09BumBU_G5rspCSA",
@@ -98,7 +98,7 @@ export const products = [
   {
     id: "nitro-golden-silk",
     name: "Nitro Golden Silk",
-    price: 9.50,
+    price: 620,
     category: "Cold Coffee",
     description: "Silky smooth cold brew infused with nitrogen and vanilla bean.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbWloWMvGiadJosybVsB8nJtibcCZ1BZXVvME3j1VW5KMnyh3rR9apQ2Ik6xW8wobXnoJPUWxLSe7YVk2RlSHil7FvGqhdNPeBShjpA_00v8qyh1MYGYwGcPIurmJ6iPSQVP-ybXMvCaqs_CIXJK_RzXSiYhUjDdxRbYZjvWE-VhWupkjCMP-5Os3Ya-VXsmcvwTDmKPzXRvUgAaM9x459QLpskD3RqFhqP0ChlM__5W2phCBj6HwOf99n8S6_5m2tnHxTccFA3s0",
@@ -110,7 +110,7 @@ export const products = [
   {
     id: "ritual-bundle",
     name: "The Ritual Bundle",
-    price: 65.00,
+    price: 3800,
     category: "Coffee Combos",
     description: "Complete starter set: Handheld grinder, 250g beans, and a ceramic mug.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD6_nD7SYUsqK5dValWi_7q_dMQAcq4O8gISAEqGefhuJEeGJyjmGd0t2ciwT40KwosTApl0b4zcxZaZQ3bbNIPEX64Zas3eNeRXpV9K1xYS4h5CCgp5K3N45INBkArgh-hO752843qI1tLXODK1i8y13BaftNkFcSBewG0Z6vxg7wZzBMu2W4UffrCYv_F-VaIFYr6Hfjif19j2K-0cSlYzst01ANFw-lvtRy8ttED4f0JPbNi_N7WAApfX04X9tyk8gb0t48r01Q",
@@ -122,7 +122,7 @@ export const products = [
   {
     id: "toffee-latte",
     name: "Signature Toffee Latte",
-    price: 7.25,
+    price: 490,
     category: "Hot Coffee",
     description: "Double shot of espresso with caramelized butter and sea salt.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAmLR9hnxa3BZYC8EkbBVMOuroX9-SjspcaAk_kqvU-5SRP8bChS8zGO5_RT4IbJaPLP2dGn-adwSFtImQlvDtiBthmcNKRa3eEujf6nGf94oJn8WZR-b16eGMlSSspvJeSgn7iqmUlcV2Oe-HgchywnD1dNaen2opcBYFG5yI8JvW0rAnGZQxNZhuHaultZbNdc1LfKKpZCQ2KMuKk-z4x4madK10T6WR4-pFlQbh_t2UvxLrg0kO4kt7ENRYu9VUggjNuJ4_66Y0",
@@ -134,7 +134,7 @@ export const products = [
   {
     id: "roasters-choice-pack",
     name: "Roaster's Choice Pack",
-    price: 42.00,
+    price: 2950,
     category: "Coffee Combos",
     description: "A surprise trio of our freshest seasonal single-origin beans.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAKIVDaPGdrzItWicSDvbYgwc1ErSjI_HhrwWiEKM5Z9CRFo8Nnvm_Z1sSvZpcMQbNcdkmnF-NF3Zymz0VENAhuHHp9eeD1Tl_q1_hLPOXAklNHeg7XvfN0FWxrlAuO6E_CQEV1EP11TjYkDZE8m99sbBVrfD4wZKFcKNA1uT01wDnNQb8gUguOL4xYqJ6KY8mbfX7Tey0iLClue4mP5uMoDKz4J3EfK1PN_FGz4f2bruaqNw5cgpnqOrYCIPpSdD6DObuxhbOUdSU",
@@ -146,7 +146,7 @@ export const products = [
   {
     id: "golden-hour-blend",
     name: "The Golden Hour Blend",
-    price: 24.00,
+    price: 1850,
     category: "Limited Edition",
     description: "Ethiopian beans featuring notes of wild honey and blood orange.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAiVgi5fMDnYmkArjAHVGd44cIwinKTi_ceGAJfu6BtyYb4vu9HBfl3jjhnO0lJbBc_9Jv72iLuVAH48d_5-N88LVnv3BUapyoZcScNSZvpBtEZtQclvxqfqAcyvRucREQVGeQdEqXmgFH_JTFRQtiCmh_l8wgDM7fTqOIWWAIf8ZZaAcBrJ3GSXCAyvF90HyTkqQs-KwLJLQocvUQrYcImwU72QHOY1UoxceTeOV0ms2StbQ373TxFFuSwH5894fqSt2rER7VFIMQ",
@@ -158,7 +158,7 @@ export const products = [
   {
     id: "velvet-cloud-cold-brew",
     name: "Velvet Cloud Cold Brew",
-    price: 9.00,
+    price: 580,
     category: "Limited Edition",
     description: "A 24-hour slow-steeped concentrate topped with our signature sea salt foam.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA-4hXK5vRxbNUfYLWfjwtklR51oDukdpydRSsxCQYLmWP36l4tABSmI7-nruc-0RhyQ1aulC5GfcCjlbXQC-NmVvPqCoJqAeSg_9nyjDIRLzD9ik1oz_VlApq_a8xuYdAeqoXHjoQ4RKkxVTfXNjXlNGIax0bht6fE6swPm0n3_QON_8peqyAHTbXXZ9QLS6c_Ey44uBHYBinZRd4-iitCONE_hH9Q4E3PguzxS_7Jr060VbvuV0OjieHjuTMmKs0TTWh6EaIE5QY",
@@ -166,5 +166,29 @@ export const products = [
     details: "Extended 24-hour immersion cold brew concentrate. Poured over solid clear ice blocks and finished with a float of cold-foamed organic cream whipped with a touch of vanilla syrup and sea salt flakes.",
     roast: "Medium-Dark",
     origin: "Colombia Single Estate"
+  },
+  {
+    id: "premium-brownie",
+    name: "Premium Double Fudge Brownie",
+    price: 380,
+    category: "Desserts",
+    description: "Glossy double chocolate fudge brownie, topped with a dusting of gold leaf and powdered sugar.",
+    image: "/images/brownie.png",
+    isBestseller: true,
+    details: "Slow-baked using 70% dark Valrhona Belgian chocolate and premium cocoa, yielding a dense, fudgy core. Served on an elegant slate plate with a dusting of organic powdered sugar and edible gold leaf.",
+    roast: "N/A",
+    origin: "Belgian Dark Chocolate"
+  },
+  {
+    id: "premium-hot-chocolate",
+    name: "Belgian Hot Chocolate Milk",
+    price: 420,
+    category: "Hot Coffee",
+    description: "Creamy Belgian milk chocolate fused with organic whole milk and gourmet toasted marshmallows.",
+    image: "/images/hot_chocolate.png",
+    isBestseller: false,
+    details: "A luxurious blend of single-origin Belgian milk chocolate melted directly into micro-foamed organic whole milk. Garnished with home-toasted vanilla bean marshmallows and a pinch of cinnamon.",
+    roast: "N/A",
+    origin: "Belgian Single Estate Cocoa"
   }
 ];

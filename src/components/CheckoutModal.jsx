@@ -22,8 +22,8 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
     return cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   };
 
-  const deliveryFee = formData.orderType === 'Delivery' ? 5.00 : 0.00;
-  const tax = calculateSubtotal() * 0.08; // 8% tax
+  const deliveryFee = formData.orderType === 'Delivery' ? 50 : 0;
+  const tax = Math.round(calculateSubtotal() * 0.05); // 5% GST
   const grandTotal = calculateSubtotal() + tax + deliveryFee;
 
   const handleChange = (e) => {
@@ -49,10 +49,10 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
         phone: formData.phone,
         type: formData.orderType,
         items: [...cartItems],
-        total: grandTotal.toFixed(2),
+        total: grandTotal,
         destination: formData.orderType === 'Dine-in' ? `Table ${formData.tableNumber}` : (formData.orderType === 'Delivery' ? formData.address : 'Lounge Counter'),
         eta: formData.orderType === 'Delivery' ? '30-40 mins' : (formData.orderType === 'Dine-in' ? '8-12 mins' : '10-15 mins'),
-        date: new Date().toLocaleDateString('en-US', {
+        date: new Date().toLocaleDateString('en-IN', {
           year: 'numeric',
           month: 'long',
           day: 'numeric',
@@ -96,7 +96,7 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
             </div>
             <h3 className="font-headline-md text-headline-md text-primary mb-2">Brewing Your Order...</h3>
             <p className="font-body-md text-on-surface-variant max-w-xs">
-              Our master baristas and roasters are securing your payment and scheduling your premium coffee ritual.
+              Our baristas and delivery coordinators are securing your Cash on Delivery (COD) order.
             </p>
           </div>
         )}
@@ -107,7 +107,7 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
             <span className="material-symbols-outlined text-secondary text-6xl mb-4 bg-secondary/10 p-4 rounded-full brew-pulse">
               check_circle
             </span>
-            <span className="font-label-caps text-label-caps text-secondary mb-1">Ritual Booked</span>
+            <span className="font-label-caps text-label-caps text-secondary mb-1">COD Order Confirmed</span>
             <h2 className="font-display-lg text-[36px] text-primary mb-6">Your Order Receipt</h2>
 
             {/* Receipt Content */}
@@ -124,7 +124,7 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
                     <span className="text-on-surface-variant">
                       {item.name} <strong className="text-primary text-xs">x{item.quantity}</strong>
                     </span>
-                    <span className="text-on-surface font-semibold">${(item.price * item.quantity).toFixed(2)}</span>
+                    <span className="text-on-surface font-semibold">₹{item.price * item.quantity}</span>
                   </div>
                 ))}
               </div>
@@ -137,6 +137,8 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
                 <span className="text-on-surface font-semibold text-right">{receiptData.destination}</span>
                 <span className="text-on-surface-variant">Estimated Prep/ETA:</span>
                 <span className="text-secondary font-bold text-right">{receiptData.eta}</span>
+                <span className="text-on-surface-variant">Payment Mode:</span>
+                <span className="text-primary font-bold text-right">Cash on Delivery</span>
               </div>
 
               {/* Customer Info */}
@@ -147,8 +149,8 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
 
               {/* Total */}
               <div className="flex justify-between items-center pt-2">
-                <span className="font-label-caps text-label-caps text-primary">Paid Total</span>
-                <span className="text-secondary font-bold text-xl">${receiptData.total}</span>
+                <span className="font-label-caps text-label-caps text-primary">Amount to Pay</span>
+                <span className="text-secondary font-bold text-xl">₹{receiptData.total}</span>
               </div>
             </div>
 
@@ -208,7 +210,7 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="9409564018"
                       className="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all text-sm"
                     />
                   </div>
@@ -260,7 +262,7 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
                       rows="2"
                       value={formData.address}
                       onChange={handleChange}
-                      placeholder="Street, suite, zip-code for fresh bean delivery"
+                      placeholder="Street, area, and landmark in Ahmedabad"
                       className="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all text-sm"
                     />
                   </div>
@@ -278,12 +280,24 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
                   />
                 </div>
 
+                {/* Cash on Delivery explicit method indicator */}
+                <div className="space-y-1">
+                  <label className="font-label-caps text-[10px] text-primary uppercase tracking-widest">Payment Method</label>
+                  <div className="bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="material-symbols-outlined text-secondary text-[20px]">payments</span>
+                      <span className="text-on-surface text-sm font-semibold">Cash on Delivery (COD)</span>
+                    </div>
+                    <span className="font-label-caps text-[10px] text-secondary border border-secondary/30 px-2 py-0.5 rounded">Standard</span>
+                  </div>
+                </div>
+
                 <button
                   type="submit"
                   className="w-full py-4 bg-primary text-on-primary font-button text-button rounded-lg hover:bg-primary-fixed-dim hover:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4"
                 >
                   <span className="material-symbols-outlined text-[18px]">verified</span>
-                  Place Order (${grandTotal.toFixed(2)})
+                  Place COD Order (₹{grandTotal})
                 </button>
               </form>
             </div>
@@ -301,9 +315,9 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
                     <div key={item.id} className="flex justify-between items-start gap-4">
                       <div className="text-sm">
                         <h5 className="font-medium text-on-surface">{item.name}</h5>
-                        <p className="text-xs text-on-surface-variant">Qty: {item.quantity} x ${item.price.toFixed(2)}</p>
+                        <p className="text-xs text-on-surface-variant">Qty: {item.quantity} x ₹{item.price}</p>
                       </div>
-                      <span className="text-sm font-semibold text-primary">${(item.price * item.quantity).toFixed(2)}</span>
+                      <span className="text-sm font-semibold text-primary">₹{item.price * item.quantity}</span>
                     </div>
                   ))}
                 </div>
@@ -313,21 +327,21 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
               <div className="border-t border-outline-variant/10 pt-4 mt-6 space-y-2 text-sm text-on-surface-variant">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span className="text-on-surface font-medium">${calculateSubtotal().toFixed(2)}</span>
+                  <span className="text-on-surface font-medium">₹{calculateSubtotal()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>VAT & Tax (8%)</span>
-                  <span className="text-on-surface font-medium">${tax.toFixed(2)}</span>
+                  <span>VAT & Service GST (5%)</span>
+                  <span className="text-on-surface font-medium">₹{tax}</span>
                 </div>
                 {formData.orderType === 'Delivery' && (
                   <div className="flex justify-between">
-                    <span>Delivery Courier Fee</span>
-                    <span className="text-on-surface font-medium">$5.00</span>
+                    <span>Lounge Delivery Fee</span>
+                    <span className="text-on-surface font-medium">₹50</span>
                   </div>
                 )}
                 <div className="flex justify-between items-center text-on-surface pt-4 border-t border-outline-variant/10 font-semibold text-lg">
                   <span className="text-primary font-bold">Total Cost</span>
-                  <span className="text-secondary font-bold text-2xl">${grandTotal.toFixed(2)}</span>
+                  <span className="text-secondary font-bold text-2xl">₹{grandTotal}</span>
                 </div>
               </div>
             </div>

@@ -145,7 +145,7 @@ export default function WhatsNew() {
                 <p className="font-body-md text-xs text-on-surface-variant mb-4 leading-relaxed">
                   A fresh, double-baked flaky almond croissant prepared daily by our pastry chef, paired with any seasonal pour-over.
                 </p>
-                <span className="font-label-caps text-[10px] text-tertiary font-bold tracking-wider">$12 Morning Special</span>
+                <span className="font-label-caps text-[10px] text-tertiary font-bold tracking-wider">₹950 Morning Special</span>
               </div>
             </div>
           </div>

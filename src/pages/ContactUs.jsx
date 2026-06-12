@@ -12,6 +12,11 @@ export default function ContactUs() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
+      // Open default email client with inquiry details
+      const mailtoSubject = encodeURIComponent(formData.subject);
+      const mailtoBody = encodeURIComponent(`Hello Sip Happens,\n\nI would like to inquire about the following:\n\nSubject: ${formData.subject}\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\nWarm regards,\n${formData.name}`);
+      window.location.href = `mailto:naishals24@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
       setSubmitted(true);
       setFormData({ name: '', email: '', subject: 'Inquiry about Brews', message: '' });
       setTimeout(() => setSubmitted(false), 5000);
@@ -139,7 +144,7 @@ export default function ContactUs() {
                 <div>
                   <p className="font-label-caps text-[10px] text-secondary mb-1 uppercase tracking-wider">Address</p>
                   <p className="text-on-surface text-sm leading-relaxed">
-                    127 Espresso Way, Roasters District<br/>New York, NY 10012
+                    Ground Floor, Luxuria Business Hub,<br/>Near Rajpath Club, S.G. Highway,<br/>Ahmedabad, Gujarat 380054
                   </p>
                 </div>
               </div>
@@ -166,20 +171,28 @@ export default function ContactUs() {
             <h3 className="font-headline-md text-headline-md text-on-surface mb-6">Direct Line</h3>
             
             <div className="space-y-4">
-              <a href="tel:+12125550198" className="flex items-center gap-4 group w-fit">
+              <a href="tel:+919409564018" className="flex items-center gap-4 group w-fit">
                 <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
                   <span className="material-symbols-outlined text-secondary text-[20px]">call</span>
                 </div>
                 <span className="text-on-surface-variant group-hover:text-primary transition-colors text-sm sm:text-base font-medium">
-                  +1 (212) 555-0198
+                  +91 9409564018
                 </span>
               </a>
-              <a href="mailto:hello@sip-happens.com" className="flex items-center gap-4 group w-fit">
+              <a href="https://wa.me/919409564018" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group w-fit">
+                <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+                  <span className="material-symbols-outlined text-secondary text-[20px]">forum</span>
+                </div>
+                <span className="text-on-surface-variant group-hover:text-primary transition-colors text-sm sm:text-base font-medium">
+                  Chat on WhatsApp
+                </span>
+              </a>
+              <a href="mailto:naishals24@gmail.com" className="flex items-center gap-4 group w-fit">
                 <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
                   <span className="material-symbols-outlined text-secondary text-[20px]">mail</span>
                 </div>
                 <span className="text-on-surface-variant group-hover:text-primary transition-colors text-sm sm:text-base font-medium">
-                  hello@sip-happens.com
+                  naishals24@gmail.com
                 </span>
               </a>
             </div>
@@ -210,10 +223,10 @@ export default function ContactUs() {
         <div className="absolute top-6 left-6 sm:top-8 sm:left-8 z-20 glass-card p-6 rounded-lg max-w-xs shadow-2xl border border-secondary/20">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-3 h-3 rounded-full bg-secondary brew-pulse"></div>
-            <h4 className="font-headline-md text-[18px] text-on-surface font-semibold">Find Us</h4>
+            <h4 className="font-headline-md text-[18px] text-on-surface font-semibold">Ahmedabad Lounge</h4>
           </div>
           <p className="text-xs text-on-surface-variant leading-relaxed">
-            Located in the heart of the historic Roasters District. Look for our Soft Gold neon signage.
+            Located near Rajpath Club, S.G. Highway. Come experience our luxury, custom-designed dark wood coffee lounge.
           </p>
         </div>
 

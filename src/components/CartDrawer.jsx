@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onCheckout }) {
   const calculateTotal = () => {
-    return cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
+    return cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   };
 
   return (
@@ -88,7 +88,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
                     </div>
 
                     {/* Price */}
-                    <span className="text-secondary font-bold text-sm">${(item.price * item.quantity).toFixed(2)}</span>
+                    <span className="text-secondary font-bold text-sm">₹{item.price * item.quantity}</span>
                   </div>
                 </div>
 
@@ -110,7 +110,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
           <div className="p-6 border-t border-outline-variant/10 bg-surface-container-low flex flex-col gap-4">
             <div className="flex justify-between items-center">
               <span className="font-label-caps text-label-caps text-on-surface-variant">Est. Subtotal</span>
-              <span className="font-headline-md text-headline-md text-primary font-bold">${calculateTotal()}</span>
+              <span className="font-headline-md text-headline-md text-primary font-bold">₹{calculateTotal()}</span>
             </div>
             
             <p className="text-xs text-on-surface-variant leading-relaxed">
