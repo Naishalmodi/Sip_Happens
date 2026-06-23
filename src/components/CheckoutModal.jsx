@@ -86,7 +86,7 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderSucce
       />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-4xl bg-surface-container-low border border-outline-variant/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden z-10 flex flex-col md:flex-row max-h-[90vh]">
+      <div className="relative w-full h-full sm:h-auto max-h-full sm:max-h-[90vh] sm:max-w-4xl bg-surface-container-low border border-outline-variant/10 sm:rounded-2xl rounded-none shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden z-10 flex flex-col md:flex-row">
         
         {/* Loading State Overlay */}
         {loading && (

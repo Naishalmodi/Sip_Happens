@@ -39,33 +39,23 @@ export default function Header({ cartCount, onCartClick }) {
         {/* Logo */}
         <Link 
           to="/" 
-          className="relative flex items-center h-12 overflow-visible group"
+          className="flex items-center gap-3 group transition-transform duration-300 hover:scale-[1.02]"
         >
-          <div className="relative flex items-center">
-            {/* Brand Name (visible only when not scrolled) */}
-            <span className={`font-headline-md text-2xl md:text-3xl font-bold text-primary tracking-tight transition-all duration-500 transform ${
-              isScrolled ? 'opacity-0 -translate-y-4 pointer-events-none absolute' : 'opacity-100 translate-y-0 relative'
-            }`}>
-              Sip Happens
-            </span>
-
-            {/* Brand Logo + Text (visible only when scrolled) */}
-            <div className={`flex items-center gap-3 transition-all duration-500 transform ${
-              isScrolled ? 'opacity-100 translate-y-0 relative' : 'opacity-0 translate-y-4 pointer-events-none absolute'
-            }`}>
-              <svg className="w-8 h-8 text-secondary animate-pulse" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M25 40H75V60C75 71.0457 66.0457 80 55 80H45C33.9543 80 25 71.0457 25 60V40Z" fill="#DEB173" fillOpacity="0.15" stroke="#DEB173" strokeWidth="3" />
-                <path d="M75 45H83C86.866 45 90 48.134 90 52C90 55.866 86.866 59 83 59H75" stroke="#DEB173" strokeWidth="3" strokeLinecap="round" />
-                <path d="M40 25C40 25 43 18 43 15C43 12 40 10 40 10" stroke="#DEB173" strokeWidth="3" strokeLinecap="round" />
-                <path d="M50 25C50 25 53 18 53 15C53 12 50 10 50 10" stroke="#DEB173" strokeWidth="3" strokeLinecap="round" />
-                <path d="M60 25C60 25 63 18 63 15C63 12 60 10 60 10" stroke="#DEB173" strokeWidth="3" strokeLinecap="round" />
-                <rect x="20" y="85" width="60" height="5" rx="2.5" fill="#DEB173" />
-              </svg>
-              <span className="font-headline-md text-xl md:text-2xl font-bold text-primary tracking-tight">
-                Sip Happens
-              </span>
-            </div>
-          </div>
+          <svg className={`w-8 h-8 text-secondary transition-all duration-500 ${
+            isScrolled ? 'scale-90 rotate-[-5deg]' : 'scale-100 rotate-0'
+          }`} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25 40H75V60C75 71.0457 66.0457 80 55 80H45C33.9543 80 25 71.0457 25 60V40Z" fill="#DEB173" fillOpacity="0.15" stroke="#DEB173" strokeWidth="3" />
+            <path d="M75 45H83C86.866 45 90 48.134 90 52C90 55.866 86.866 59 83 59H75" stroke="#DEB173" strokeWidth="3" strokeLinecap="round" />
+            <path d="M40 25C40 25 43 18 43 15C43 12 40 10 40 10" stroke="#DEB173" strokeWidth="3" strokeLinecap="round" />
+            <path d="M50 25C50 25 53 18 53 15C53 12 50 10 50 10" stroke="#DEB173" strokeWidth="3" strokeLinecap="round" />
+            <path d="M60 25C60 25 63 18 63 15C63 12 60 10 60 10" stroke="#DEB173" strokeWidth="3" strokeLinecap="round" />
+            <rect x="20" y="85" width="60" height="5" rx="2.5" fill="#DEB173" />
+          </svg>
+          <span className={`font-headline-md font-bold text-primary tracking-tight transition-all duration-300 ${
+            isScrolled ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'
+          }`}>
+            Sip Happens
+          </span>
         </Link>
 
         {/* Desktop Links */}
@@ -76,13 +66,16 @@ export default function Header({ cartCount, onCartClick }) {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-label-caps text-label-caps tracking-widest pb-1 transition-all duration-300 ${
+                className={`relative font-label-caps text-label-caps tracking-widest pb-2 transition-all duration-300 ${
                   isActive
-                    ? 'text-primary border-b-2 border-primary'
+                    ? 'text-primary'
                     : 'text-on-surface-variant hover:text-primary'
-                }`}
+                } group`}
               >
                 {link.name}
+                <span className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-300 ${
+                  isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} />
               </Link>
             );
           })}
@@ -115,7 +108,7 @@ export default function Header({ cartCount, onCartClick }) {
           {/* Mobile Menu Toggle */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-primary hover:text-secondary focus:outline-none"
+            className="lg:hidden p-2 text-primary hover:text-secondary focus:outline-none z-50"
             aria-label="Toggle Navigation Menu"
           >
             <span className="material-symbols-outlined text-[28px]">
@@ -126,48 +119,55 @@ export default function Header({ cartCount, onCartClick }) {
       </nav>
 
       {/* Mobile Drawer Overlay */}
-      {mobileMenuOpen && (
-        <div 
-          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden transition-all duration-300 ${
-            isScrolled ? 'top-16' : 'top-24'
-          }`}
-          onClick={() => setMobileMenuOpen(false)}
-        />
-      )}
+      <div 
+        className={`fixed inset-0 bg-black/75 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-300 ${
+          mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
 
       {/* Mobile Drawer Menu */}
       <div 
-        className={`fixed right-0 w-72 bg-surface-container-lowest border-l border-outline-variant/10 z-40 lg:hidden transform transition-all duration-300 ease-in-out ${
-          isScrolled ? 'top-16 h-[calc(100vh-4rem)]' : 'top-24 h-[calc(100vh-6rem)]'
-        } ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-0 right-0 w-80 h-full bg-surface-container-lowest/95 backdrop-blur-md border-l border-outline-variant/10 z-40 lg:hidden transform transition-transform duration-300 ease-out flex flex-col justify-between p-8 ${
+          mobileMenuOpen ? 'translate-x-0 shadow-[-10px_0_30px_rgba(0,0,0,0.5)]' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col p-6 space-y-6">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.path;
-            return (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`font-label-caps text-label-caps tracking-widest py-2 transition-colors duration-200 ${
-                  isActive
-                    ? 'text-primary border-l-2 border-primary pl-3'
-                    : 'text-on-surface-variant hover:text-primary pl-0'
-                }`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
+        <div>
+          <div className="flex justify-between items-center mb-10 mt-4">
+            <span className="font-headline-md text-xl font-bold text-primary">Sip Happens</span>
+          </div>
+
+          <div className="flex flex-col space-y-5">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`font-label-caps text-label-caps tracking-widest py-3 border-b border-outline-variant/5 flex items-center justify-between transition-colors ${
+                    isActive ? 'text-primary' : 'text-on-surface-variant hover:text-primary'
+                  }`}
+                >
+                  <span>{link.name}</span>
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="space-y-4">
           <Link
             to="/shop"
             onClick={() => setMobileMenuOpen(false)}
-            className="font-button text-button bg-primary text-on-primary text-center py-4 rounded-lg hover:bg-primary-fixed-dim transition-colors"
+            className="block font-button text-button bg-primary text-on-primary text-center py-4 rounded-full hover:bg-primary-fixed-dim transition-colors shadow-lg shadow-primary/10"
           >
             Order Online Now
           </Link>
+          <p className="text-[10px] text-on-surface-variant/40 text-center uppercase tracking-widest">
+            Crafted for the Discerning Palette
+          </p>
         </div>
       </div>
     </header>

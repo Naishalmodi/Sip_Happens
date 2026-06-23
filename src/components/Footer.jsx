@@ -14,117 +14,90 @@ export default function Footer() {
     }
   };
 
+  const instagramImages = [
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuBXBOfzrsGwGGO5iPs5xI7kcUoHZeB935k5c50MFxQm-HnOlN6wiCxx_tRPOTJ5RIzR8IcwksfKKybmkh9GtCNL2xVfFvY-NNm4kqSo7-Dqg5ormUKeDB90NHOk4Mhg0F5BZNqPP7eQNnbucl-ZCaUnwKQLEtB6Xhxv4O_dVwpcq87P4_6jEd36cgF_glLzDjZFNDybyOv6FTZBt0cusdSlc70JQzNIlrdgyzmVlR2orvO55dIC_koRK55mFq9UveTNeQYilLbpniQ",
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuC4UKK-jOUbb734Y7PmK3wt37TCiFk8xTi0-volDFKD3gles7poxy5ObUDrHuF8N68cEunqMab1Njray3owBDlCghQERslob5l9j08J3voA1esTCr3vAPfg7S8zvcEycl7uXIVlmeXFDv1OO5BdRlL9eHFiBEWXg4OHPVU3nYecXnh6J5F-SNqNmWpg2QEtWbdimbkcekHxQbmVZQTq12Vzl1p3a-eDBn2PFu_GhcT-X70pcwydC9RNBn4yuDtAOF7lXAA7-5FycmA",
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuB41lAH_fB_gupOpWy56tjYEYTX5AfPD9b9toq9fl_CcputVzBjdbW_Awlb41rpPqofgNlfrRa6_EbzN0swGz08lusq4m46Hg3Vcf9vO7Q7PuWKQyXmGyglb3XraJ5bdjAnfZDn-PZlN7ULmK8klAVb8pMB3cTnvwcoL8O8KDCgaudIkarRS1WUBgBs2nYFwRmE64VPdGt_qS8I0T3pyH6iIPTyCtltAjaPNYkMmL8tAX97oFtn6xX4nxqPQ9uZrVO8S2rH4XK2aio",
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuCV0CRrRUwpTGNfbym86anNJ0YEmURG_Q_ARXiicMubQDbzcQCVm84QcgG_F1O1XCDj1SJvjJOOtEzQJM4TuEjdB6rv5jbtVCtfKGV6qcuhkbUbEs_r08IskEQoeTBrqYp-_JIvSXtIzOJlPg0ZnsT6UsIoJOeMlAQ_IfJ0s91y7_PUSdpUlE_tAz4e_MZ4GcQXdx3L-lKPj39MmS2cTzu_00KyMZUSt-yd4AGTu4L_wArrdALPzAulP9pwvVIykrAz4s7bbSXc2es",
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuByCVIUJ3YgkJ_TxSVqT8JIjEfGZrOvtJqirwGEKaq8FLHbB1CocFpmkaZn-iG2QCalD2kjkw7169Ah8rX0w9Of1j4mpZny0b4oT0ZI_reHGyYyyksnaiZY2bUADfr9AikE4Oan3N25eiu1oILH7uX8tgPgWi-F8OzlpWswmxjBZOyZBDV6S0a7jTaqGx7UowfHcTJBQW1xn4OLeUGsYIJB7qrDdwVjszoX1etmxMie_a6zBY-O8w-7ewgdHFr2oqdDX92yipqWXqg",
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuBAHZDJtSZcaTk2ji5E6g99k6xND6TLBM8ubKvYywlsUM7UdCd11fuRFQB4A7HwLS6W4kP4jobanf3d1sZHozCqYVL6fzDvoOiRe6n-947OPkYIZVpjl8EiwIvVEB2gbeoXvlnXIlZWIx9iHlAa8W83cM0JUm6kFKQYIjPWbWqQIfnvt7icqRidhe1qzp5ySBDhyD7SnKMgf02Ya2-se76GD0jd-7pKqhIJORMLfBuCoXi_FzISTojJkD4xkvW_XwxyEhun7xReCOE"
+  ];
+
   return (
     <footer className="w-full rounded-t-[0.5rem] bg-surface-container-lowest border-t border-primary-container/20 mt-20">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+      
+      {/* Daily Inspiration Row */}
+      <div className="border-b border-outline-variant/5 py-12 px-margin-mobile md:px-margin-desktop text-center max-w-container-max mx-auto">
+        <span className="font-label-caps text-[10px] text-secondary tracking-[0.25em] uppercase block mb-3">Daily Coffee Inspiration</span>
+        <blockquote className="font-headline-lg text-lg sm:text-2xl text-primary italic max-w-2xl mx-auto leading-relaxed font-medium">
+          “Coffee is a language in itself—spoken in whispers of steam and rich mahogany notes.”
+        </blockquote>
+      </div>
+
+      {/* Instagram Gallery Section */}
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 border-b border-outline-variant/5">
+        <div className="flex justify-between items-center mb-6">
+          <span className="font-label-caps text-label-caps text-primary tracking-widest">Instagram Preview</span>
+          <a 
+            href="https://instagram.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-xs text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-semibold"
+          >
+            @siphappens_lounge <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
+          </a>
+        </div>
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+          {instagramImages.map((img, i) => (
+            <a 
+              key={i}
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="relative aspect-square overflow-hidden rounded-lg group border border-outline-variant/10"
+            >
+              <img 
+                src={img} 
+                alt={`Instagram preview ${i+1}`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <svg className="w-6 h-6 text-primary fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.79 4 4c0 2.21-1.79 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Main Footer Links & Newsletter */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-mobile md:px-margin-desktop py-16 max-w-container-max mx-auto">
         {/* Brand */}
         <div className="flex flex-col gap-stack-sm">
-          <div className="font-headline-md text-headline-md text-primary">Sip Happens</div>
-          <p className="font-body-md text-body-md text-on-surface-variant max-w-xs">
+          <div className="font-headline-md text-[28px] text-primary font-bold">Sip Happens</div>
+          <p className="font-body-md text-on-surface-variant max-w-xs text-sm leading-relaxed">
             Elevating your daily ritual through artisanal roasting, sustainable farming, and mindful brewing in a cinematic lounge environment.
           </p>
-        </div>
-
-        {/* Explore */}
-        <div className="flex flex-col gap-2">
-          <span className="font-label-caps text-label-caps text-primary mb-2">Explore</span>
-          <Link 
-            to="/our-story" 
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300 w-fit"
-          >
-            Our Story
-          </Link>
-          <Link 
-            to="/brewing-guide" 
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300 w-fit"
-          >
-            Brewing Guide
-          </Link>
-          <Link 
-            to="/whats-new" 
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300 w-fit"
-          >
-            What's New
-          </Link>
-          <Link 
-            to="/shop" 
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300 w-fit"
-          >
-            Shop Collection
-          </Link>
-        </div>
-
-        {/* Support */}
-        <div className="flex flex-col gap-2">
-          <span className="font-label-caps text-label-caps text-primary mb-2">Support</span>
-          <Link 
-            to="/contact" 
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300 w-fit"
-          >
-            Contact Us
-          </Link>
-          <a 
-            href="#" 
-            onClick={(e) => e.preventDefault()} 
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300 w-fit"
-          >
-            Privacy Policy
-          </a>
-          <a 
-            href="#" 
-            onClick={(e) => e.preventDefault()} 
-            className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 duration-300 w-fit"
-          >
-            Terms of Service
-          </a>
-        </div>
-
-        {/* Newsletter / Social */}
-        <div className="flex flex-col gap-stack-sm">
-          <span className="font-label-caps text-label-caps text-primary mb-2">Newsletter</span>
           
-          {subscribed ? (
-            <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 text-primary text-sm font-semibold animate-fade-in-up">
-              <span className="material-symbols-outlined text-sm mr-1">check_circle</span>
-              Welcome to the Registry!
-            </div>
-          ) : (
-            <form onSubmit={handleSubscribe} className="relative w-full">
-              <input 
-                type="email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email address" 
-                required
-                className="w-full bg-surface-container border border-outline-variant/20 rounded-lg py-3 pl-4 pr-12 text-on-surface text-sm focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all"
-              />
-              <button 
-                type="submit"
-                className="absolute right-2 top-2 bottom-2 bg-primary text-on-primary px-3 rounded-md hover:bg-secondary hover:text-on-secondary transition-colors"
-                aria-label="Subscribe"
-              >
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </button>
-            </form>
-          )}
-
-          <div className="flex gap-4 mt-2">
+          {/* Social Links Row */}
+          <div className="flex gap-3 mt-4">
             <a 
               href="https://instagram.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text-secondary hover:scale-110 transition-all"
+              className="w-10 h-10 rounded-full border border-outline-variant/15 flex items-center justify-center text-primary bg-surface-container-lowest hover:bg-primary hover:text-on-primary hover:scale-110 hover:shadow-[0_0_15px_rgba(222,193,175,0.4)] transition-all duration-300"
               aria-label="Instagram"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.79 4 4c0 2.21-1.79 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.79 4 4c0 2.21-1.79 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
             <a 
               href="https://facebook.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text-secondary hover:scale-110 transition-all"
+              className="w-10 h-10 rounded-full border border-outline-variant/15 flex items-center justify-center text-primary bg-surface-container-lowest hover:bg-primary hover:text-on-primary hover:scale-110 hover:shadow-[0_0_15px_rgba(222,193,175,0.4)] transition-all duration-300"
               aria-label="Facebook"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -135,7 +108,7 @@ export default function Footer() {
               href="https://x.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text-secondary hover:scale-110 transition-all"
+              className="w-10 h-10 rounded-full border border-outline-variant/15 flex items-center justify-center text-primary bg-surface-container-lowest hover:bg-primary hover:text-on-primary hover:scale-110 hover:shadow-[0_0_15px_rgba(222,193,175,0.4)] transition-all duration-300"
               aria-label="X"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -146,7 +119,7 @@ export default function Footer() {
               href="https://youtube.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text-secondary hover:scale-110 transition-all"
+              className="w-10 h-10 rounded-full border border-outline-variant/15 flex items-center justify-center text-primary bg-surface-container-lowest hover:bg-primary hover:text-on-primary hover:scale-110 hover:shadow-[0_0_15px_rgba(222,193,175,0.4)] transition-all duration-300"
               aria-label="YouTube"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -154,6 +127,93 @@ export default function Footer() {
               </svg>
             </a>
           </div>
+        </div>
+
+        {/* Explore */}
+        <div className="flex flex-col gap-3">
+          <span className="font-label-caps text-label-caps text-primary mb-2 tracking-widest">Explore</span>
+          <Link 
+            to="/our-story" 
+            className="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all hover:translate-x-1 duration-300 w-fit"
+          >
+            Our Story
+          </Link>
+          <Link 
+            to="/brewing-guide" 
+            className="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all hover:translate-x-1 duration-300 w-fit"
+          >
+            Brewing Guide
+          </Link>
+          <Link 
+            to="/whats-new" 
+            className="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all hover:translate-x-1 duration-300 w-fit"
+          >
+            What's New
+          </Link>
+          <Link 
+            to="/shop" 
+            className="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all hover:translate-x-1 duration-300 w-fit"
+          >
+            Shop Collection
+          </Link>
+        </div>
+
+        {/* Support */}
+        <div className="flex flex-col gap-3">
+          <span className="font-label-caps text-label-caps text-primary mb-2 tracking-widest">Support</span>
+          <Link 
+            to="/contact" 
+            className="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all hover:translate-x-1 duration-300 w-fit"
+          >
+            Contact Us
+          </Link>
+          <a 
+            href="#" 
+            onClick={(e) => e.preventDefault()} 
+            className="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all hover:translate-x-1 duration-300 w-fit"
+          >
+            Privacy Policy
+          </a>
+          <a 
+            href="#" 
+            onClick={(e) => e.preventDefault()} 
+            className="font-body-md text-sm text-on-surface-variant hover:text-primary transition-all hover:translate-x-1 duration-300 w-fit"
+          >
+            Terms of Service
+          </a>
+        </div>
+
+        {/* Newsletter */}
+        <div className="flex flex-col gap-stack-sm">
+          <span className="font-label-caps text-label-caps text-primary mb-2 tracking-widest">Newsletter</span>
+          <p className="font-body-md text-on-surface-variant text-xs mb-2 leading-relaxed">
+            Subscribe for exclusive micro-batch allocations and private cupping workshops.
+          </p>
+          
+          {subscribed ? (
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-primary text-sm font-semibold animate-fade-in-up flex items-center gap-2">
+              <span className="material-symbols-outlined text-[18px]">check_circle</span>
+              Welcome to the Sip Registry!
+            </div>
+          ) : (
+            <form onSubmit={handleSubscribe} className="relative w-full">
+              <input 
+                type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email address" 
+                required
+                className="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg py-3.5 pl-4 pr-12 text-on-surface text-sm focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all duration-300"
+              />
+              <button 
+                type="submit"
+                className="absolute right-2 top-2 bottom-2 bg-primary text-on-primary px-3.5 rounded-md hover:bg-secondary hover:text-on-secondary transition-colors duration-300 flex items-center justify-center"
+                aria-label="Subscribe"
+              >
+                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </form>
+          )}
         </div>
       </div>
 

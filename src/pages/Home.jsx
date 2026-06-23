@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
+import CinematicScroll from '../components/CinematicScroll';
 
 export default function Home({ onAddToCart }) {
   const [scrollY, setScrollY] = useState(0);
@@ -62,16 +63,16 @@ export default function Home({ onAddToCart }) {
           <p className="font-body-lg text-[16px] sm:text-body-lg text-on-surface-variant mb-12 italic max-w-2xl mx-auto">
             “Brewed for moments that matter. A sanctuary of slow living, glassmorphism, and artisanal warmth.”
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up">
             <Link 
               to="/shop" 
-              className="brew-pulse font-button text-button bg-primary text-on-primary px-10 py-5 rounded-full hover:bg-primary-fixed-dim hover:scale-95 transition-all duration-300 w-full sm:w-auto"
+              className="brew-pulse font-button text-button bg-primary text-on-primary px-10 py-5 rounded-full hover:bg-primary-fixed-dim hover:scale-95 active:scale-90 transition-all duration-300 w-full sm:w-auto text-center"
             >
               Order Now
             </Link>
             <Link 
               to="/shop" 
-              className="font-button text-button border border-secondary text-secondary px-10 py-5 rounded-full hover:bg-secondary/15 transition-all duration-300 w-full sm:w-auto text-center"
+              className="font-button text-button border border-secondary text-secondary px-10 py-5 rounded-full hover:bg-secondary/15 hover:scale-[1.03] active:scale-95 transition-all duration-300 w-full sm:w-auto text-center"
             >
               Explore Collection
             </Link>
@@ -83,6 +84,9 @@ export default function Home({ onAddToCart }) {
           <span className="material-symbols-outlined text-primary text-4xl">keyboard_double_arrow_down</span>
         </div>
       </section>
+
+      {/* Cinematic Scroll Storytelling Section */}
+      <CinematicScroll />
 
       {/* Top Selling Products */}
       <section className="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">

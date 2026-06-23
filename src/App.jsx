@@ -89,6 +89,9 @@ export default function App() {
     <Router>
       <ScrollToTop />
 
+      {/* Global Background Grain/Noise Overlay */}
+      <div className="noise-overlay" />
+
       {/* Shell Layout */}
       <div className="flex flex-col min-h-screen">
 
